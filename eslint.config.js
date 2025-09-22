@@ -19,5 +19,12 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+        rules: {
+      // ❌ كده بتقفل التحذير الخاص بالحاجات اللي مش مستخدمة
+      'no-unused-vars': 'off',
+
+      // ✅ لو عايز تحكم دقيق أكتر مع TypeScript:
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
+    },
   },
 ])

@@ -1,16 +1,26 @@
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Navbar from './Componants/Navbar'
-import ProductsList from './Componants/ProductsList'
-import Slider from './Componants/Slider'
+import Navbar from './Components/Navbar'
+import ProductsList from './Components/ProductsList'
+import Slider from './Components/Slider'
+import About from './Components/ِAbout'
+import Home from './Components/Home'
+import ProductDetails from './Components/ProudactDetails'
 
 function App() {
 
   return (
     <>
+    
       <Navbar />
-      <Slider/>
-      <ProductsList/>
+    
+
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+      </Routes>
     </>
   )
 }
